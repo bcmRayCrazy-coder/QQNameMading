@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>QQ名字生成器</title>
+    <script>
+
+        function reverse(s){
+            return s.split("").reverse().join("");
+        }
+        function gentext() {
+            var name = document.getElementById("name").value;
+            var suffix = document.getElementById("suffix").value;
+            suffix = reverse(suffix);
+
+            var output = document.getElementById("output");
+            output.value = name+String.fromCharCode(8238)+suffix +String.fromCharCode(8237);
+            // document.write("<h1 style='padding: 100px 100px'>"+name+"&#8238;"+suffix +"&#8237;</h1>")
+            output.setSelectionRange(0, output.value.length);
+            // output.innerHTML = "+name+"&#8238;"+suffix +"&#8237;
+            // output.style.visibility = "visible";
+            // document.write("")
+            var look1 = document.getElementById("look1");
+            var look2 = document.getElementById("look2");
+            look1.textContent = name;
+            look2.textContent = document.getElementById("suffix").value;
+        }
+    
+    </script>
+    <style>
+        body{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1></h1>
+    <div class="box">
+        <input id="name" placeholder="名字/前缀">
+        <input id="suffix" placeholder="后缀">
+        <button onclick="gentext()">生成</button>
+        <input id="output" placeholder="生成后的名字">
+    </div>
+    <br>
+    <div>
+        <h1>例子：</h1>
+        <span>ray_crazy</span>
+        <span> 撤回了一条消息</span>
+        <span>并去学了4年python</span>
+        <br>
+        <h1>你的名字的预览</h1>
+        <span id="look1">(好像还没写啥啊)</span>
+        <span> 息消条一回撤</span>
+        <span id="look2">(好像还没写啥啊)</span>
+    </div>
+</body>
