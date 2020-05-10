@@ -24,14 +24,24 @@
             border: 2px solid grey;
             width: 500px;
         }
-        .Window-add{
-            width: 1330px;
-            height: 639px;
-            background-color: gray;
-        }
     </style>
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script>
+        function setCookie(name,value,day){
+            var oDate = new Date();
+            oDate.setDate(oDate.getDate()+day);
+            document.cookie = name + "=" + value + ";expires=" + oDate;
+        }
+        function getCookie(name){
+            var str = document.cookie;
+            var str1 = str.split(";")
+            for(let i = 0;i < str1.length;i++){
+                var str2 = str1[i].split("=");
+                if(str2[0] === name){
+                    return str2[1];
+                }
+            }
+        }
         window.onload = function(){
             var add = document.getElementById("add");
             var set = document.getElementById("set");
