@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<head>
+    <title></title>
+    <style>
+        .submitButton{
+            border-radius: 20px;
+            border: 5px solid green;
+            background-color: white;
+            color: green;
+            text-align: center;
+            padding-bottom: 50px;
+        }
+        .box{
+            box-shadow:0px 0px 5px gray;
+            padding: 10px 20px;
+            background-color: white;
+            position: center;
+            width: 80%;
+            max-width: 90%;
+            height: 400px;
+        }
+        .box input{
+            border-radius: 5px;
+            border: 2px solid grey;
+            width: 500px;
+        }
+        .Window-add{
+            width: 1330px;
+            height: 639px;
+            background-color: gray;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script>
+        window.onload = function(){
+            var add = document.getElementById("add");
+            var set = document.getElementById("set");
+            var delet = document.getElementById("delet");
+            var submitButton = document.getElementById("submitButton");
+            add.onclick = function(){
+                windownow = document.getElementById("Window-add");
+                mainWindow = document.getElementById("mainWindow");
+                windownow.style.display = "block";
+            submitButton.onclick = function(){
+                name = document.getElementById("nameBox").value;
+                time = document.getElementById("timeBox").value;
+                setCookie("Tname",name);
+                setCookie("Ttime",time);
+                alert("提交成功");
+                alert("名字："+getCookie("Tname")+"|时间："+getCookie("Ttime"));
+                windownow.style.display = "none";
+            }
+        }
+    }
+    </script>
+</head>
+<body id="body">
+    <div class="mainWindow" id="mainWindow">
+        <div class="buttonTop" style="text-align: right;">
+            <button id="add"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii16.png" width="10px" height="10px"></button>
+            <button id="set"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii1.png" width="10px" height="10px"></button>
+            <button id="delet"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii8.png" width="10px" height="10px"></button>
+        </div>
+    </div>
+    <div id="Window-add" class="Window-add" style="text-align: center;display: none;">
+        <div style="display: inline-block" class="box">
+            <span>名字name:</span>
+            <input id="nameBox" type="text">
+            <br>
+            <span>时间time:</span>
+            <input id="timeBox" type="time">
+            <br>
+            <button type="submit" id="submitButton" style="width:400px;height: 50px;" class="submitButton"><h1>提交</h1></button>
+        </div>
+    </div>
+</body>
