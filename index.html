@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <title>管理系统</title>
+    <link rel="icon" type="img/x-icon" href="http://demo.sc.chinaz.com/Files/pic/icons/7674/Cbb1.png">
+    <style>
+        body{
+            background-color: cornsilk;
+        }
+        .leftList{
+            padding: 0px 0px;
+            background-color: darkgrey;
+            line-height: 100px;
+            width: 100px;
+            height: auto;
+            position: fixed;
+            left: 0;
+            top:0;
+        }
+        .leftListImg{
+            background-image: url("http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii21.png");
+        }
+        .leftList h5{
+            padding: 0px 10px;
+        }
+        .leftList ul{
+            display: none;
+        }
+        .mainText{
+            padding-left: 110px;
+        }
+        .manageButton{
+            width: 900px;
+            height: 40px;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var left = document.getElementById("menu");
+            var li = document.getElementById("list");
+            var but = document.getElementById("button");
+            var but2 = document.getElementById("button2");
+            left.onmouseenter = function(){
+                li.style.display = "block";
+            }
+            li.onmouseenter = function(){
+                li.style.display = "block";
+            }
+            li.onmouseleave = function(){
+                li.style.display = "none";
+            }
+            but.onclick = function(){
+                window.location.href = "more/manage.html";
+            }
+            but2.onclick = function(){
+                window.location.href = "more/door.html";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="leftList" class="leftList">
+        <h5 id="menu"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii21.png" width="20px" height="20px">菜单</h5>
+        <ul id="list">
+            <li><a href="#hubPage"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7706/Dq7.png" width="10px" height="10px">主页</a></li>
+            <li><a href="#manage"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7682/Cii1.png" width="10px" height="10px">管理</a></li>
+            <li><a href="#about"><img src="http://demo.sc.chinaz.com/Files/pic/icons/7706/Dq21.png" width="10px" height="10px">关于</a></li>
+            <li><a href="#more"><img src="" width="10px" height="10px">更多</a></li>
+        </ul>
+    </div>
+    <div class="mainText">
+        <img src="http://demo.sc.chinaz.com/Files/pic/icons/7691/Db2.png" width="579px" height="579px">
+        <img src="http://demo.sc.chinaz.com/Files/pic/icons/7691/Db20.png" width="579px" height="579px">
+        <div>
+            <h1 id="hubPage">主页</h1>
+            <div>
+                <h3>欢迎来到 管理系统</h3>
+                <h5>Welcome to the ManageSystem</h5>
+                <h4>它可以帮助你添加、设置、删除数据</h4>
+                <h5>It can help you add,set,delet the datas</h5>
+                <h4>现在正在开发阶段，敬请期待</h4>
+                <h5>Now it is devloping.Thanks for waiting</h5>
+            </div>
+        </div>
+        <div>
+            <h1 id="manage">管理</h1>
+            <button type="button" id="button">管理</button>
+            <h4>请点击上方按钮打开管理界面</h4>
+            <h5>please press the upon button for open Manage Page</h5>
+        </div>
+        <div>
+            <h1 id="about">关于</h1>
+            <h4>由5533宋铭杨 制作</h4>
+            <span>made by 5533smy</span>
+            <h4>代码由5533宋铭杨编写</h4>
+            <span>code by 5533smy</span>
+            <h4>图片由<a href="http://sc.chinaz.com/tubiao/index.html">这里</a>提供</h4>
+            <span>picture made by <a href="http://sc.chinaz.com/tubiao/index.html">here</a></span>
+        </div>
+        <div>
+            <h1 id="more">更多</h1>
+            <button id="button2">传送门</button>
+        </div>
+    </div>
+</body>
